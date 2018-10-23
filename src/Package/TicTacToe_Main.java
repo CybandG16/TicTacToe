@@ -228,7 +228,6 @@ public class TicTacToe_Main {
                 int secCord = pos.indexOf('8')+I;
 
                 board[secCord][StartP] = Short.parseShort(sign);
-                System.out.printf("I've done C %d %d", I, secCord);
 
             } else if(Coords[0].equals("R")) {
                 StringBuffer SB = new StringBuffer(rows[StartP]);
@@ -236,19 +235,17 @@ public class TicTacToe_Main {
                 int secCord = pos.indexOf('8')+I;
 
                 board[StartP][secCord] = Short.parseShort(sign);
-                System.out.printf("I've done R %d %d", I, secCord);
+
             } else if(Coords[0].equals("LR")) {
                 int secCord = ULtoRD[StartP].indexOf("8",I);
 
                 if(StartP<ULtoRD.length/2) board[board.length-Need+I][secCord]=Short.parseShort(sign);
                 else board[secCord][StartP-ULtoRD.length/2+secCord]=Short.parseShort(sign);
-                System.out.printf("I've done LR %d %d", I, secCord);
 
             }else if(Coords[0].equals("RL")) {
 
                 int secCord = URtoLD[StartP].indexOf("8",I);
 
-                System.out.printf("I've done RL %d %d", StartP, secCord);
                 if(StartP<URtoLD.length/2) board[secCord][Need-1+StartP-secCord]=Short.parseShort(sign);
                 else board[StartP-URtoLD.length/2+secCord][board.length-secCord-1]=Short.parseShort(sign);
 
